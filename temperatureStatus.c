@@ -1,6 +1,6 @@
 #include "checker_prv.h"
 
-int temperatureStatus(float temperature,enum MajorSector sectorType, float cmprTemperature) 
+int temperatureStatus(float temperature, float cmprTemperature) 
 {
 	int retStatus;
 	/* Check if the temperature is out of range */
