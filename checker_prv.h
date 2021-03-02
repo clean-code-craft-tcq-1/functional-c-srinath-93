@@ -18,6 +18,6 @@ enum MajorSector {GENERAL, HOME, PUBLIC, EV};
 /* Declaration */
 int batteryHealth(float temperature, float soc, float chargeRate, enum MajorSector sector);
 int temperatureSectorStatus(float temperature,enum MajorSector sectorType);
-int temperatureStatus(float temperature,enum MajorSector sectorType, float cmprTemperature) ;
+int temperatureStatus(float temperature, float cmprTemperature) ;
 
 #endif /* CHECKER_PRV_H_ */
