@@ -7,6 +7,8 @@ int batteryHealth(float temperature, float soc, float chargeRate, enum MajorSect
     printf("Provided input is out of range!\n");
     return 0;
   } 
+	(void)soc;
+	(void)chargeRate;
 //  else if(soc < 20 || soc > 80) 
 //  {
 //    printf("State of Charge out of range!\n");
