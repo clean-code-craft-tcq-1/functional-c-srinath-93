@@ -1,21 +1,18 @@
 #include <stdio.h>
 #include <assert.h>
+#include "checker_prv.h"
 
-int batteryIsOk(float temperature, float soc, float chargeRate) {
-  if(temperature < 0 || temperature > 45) {
-    printf("Temperature out of range!\n");
-    return 0;
-  } else if(soc < 20 || soc > 80) {
-    printf("State of Charge out of range!\n");
-    return 0;
-  } else if(chargeRate > 0.8) {
-    printf("Charge Rate out of range!\n");
-    return 0;
-  }
-  return 1;
-}
-
-int main() {
-  assert(batteryIsOk(25, 70, 0.7));
-  assert(!batteryIsOk(50, 85, 0));
+int main() 
+{
+  /* Negative test case - BMS issue detected */
+  assert(batteryHealth(25, 70, 0.7,GENERAL));
+  assert(batteryHealth(80, 70, 0.7,HOME));
+  assert(batteryHealth(190, 70, 0.7,PUBLIC));
+  assert(batteryHealth(140, 70, 0.7,EV));
+  
+  /* Positive test case - BMS Passed */
+  assert(!batteryHealth(45, 85, 0,GENERAL));
+  assert(!batteryHealth(100, 85, 0,HOME));
+  assert(!batteryHealth(210, 85, 0,PUBLIC));
+  assert(!batteryHealth(150, 85, 0,EV));
 }
