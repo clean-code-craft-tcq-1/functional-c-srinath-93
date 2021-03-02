@@ -1,6 +1,9 @@
 #ifndef CHECKER_PRV_H_
 #define CHECKER_PRV_H_
 
+#include <stdio.h>
+#include <assert.h>
+
 /* Macros */
 #define TEMP_MIN (float)0
 #define TEMP_GENRAL_MAX (float)45
