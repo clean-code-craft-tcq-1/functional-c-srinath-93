@@ -5,11 +5,11 @@
 #include <assert.h>
 
 /* Macros */
-#define TEMP_MIN (float)0
-#define TEMP_GENRAL_MAX (float)45
-#define TEMP_HOME_MAX (float)80
-#define TEMP_PUBLIC_MAX (float)210
-#define TEMP_EV_MAX (float)150
+#define TEMP_MIN 0
+#define TEMP_GENRAL_MAX 45
+#define TEMP_HOME_MAX 80
+#define TEMP_PUBLIC_MAX 210
+#define TEMP_EV_MAX 150
 
 /* Enums */
 enum MajorSector {GENERAL, HOME, PUBLIC, EV};
@@ -17,6 +17,7 @@ enum MajorSector {GENERAL, HOME, PUBLIC, EV};
 
 /* Declaration */
 int batteryHealth(float temperature, float soc, float chargeRate, enum MajorSector sector);
-int temperatureStatus(float temperature,enum MajorSector sectorType);
+int temperatureSectorStatus(float temperature,enum MajorSector sectorType);
+int temperatureStatus(float temperature,enum MajorSector sectorType, float cmprTemperature) ;
 
 #endif /* CHECKER_PRV_H_ */
