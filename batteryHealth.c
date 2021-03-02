@@ -2,7 +2,7 @@
 
 int batteryHealth(float temperature, float soc, float chargeRate, enum MajorSector sector)
 {
-  if((temperatureStatus(temperature,sector)) == 0)
+  if((temperatureSectorStatus(temperature,sector)) == 0)
   {
     printf("Provided input is out of range!\n");
     return 0;
