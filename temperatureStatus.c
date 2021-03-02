@@ -2,7 +2,7 @@
 
 int temperatureStatus(float temperature, float cmprTemperature) 
 {
-	int retStatus;
+	int retStatus = 1;
 	/* Check if the temperature is out of range */
 	if(temperature > cmprTemperature)
 	{
