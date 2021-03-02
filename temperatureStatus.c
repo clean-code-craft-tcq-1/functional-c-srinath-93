@@ -7,12 +7,7 @@ int temperatureStatus(float temperature, float cmprTemperature)
 	if(temperature > cmprTemperature)
 	{
 		retStatus = 0;
-    printf("Selected temperature has breached the max range!\n");
-	}
-	else
-	{
-		retStatus = 1;
-    printf("Selected temperature is within the range!\n");
+                printf("Selected temperature has breached the max range!\n");
 	}
 	return retStatus;
 }
