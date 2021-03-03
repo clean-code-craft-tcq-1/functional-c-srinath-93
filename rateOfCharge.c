@@ -13,7 +13,7 @@ int rateOfCharge(float chargeRate)
 {
   if(chargeRate > RATEOFCHARGE)
   {
-    printf("Charge Rate(%f) out of range(%f)!\n",chargeRate,RATEOFCHARGE);
+    printf("Charge Rate(%f) less than the expected range (%f)!\n",chargeRate,RATEOFCHARGE);
     return 0;
   }
   return 1;
