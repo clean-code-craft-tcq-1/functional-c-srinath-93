@@ -11,9 +11,9 @@
  */
 int rateOfCharge(float chargeRate)
 {
-  if(chargeRate > 0.8)
+  if(chargeRate > RATEOFCHARGE)
   {
-    printf("Charge Rate(%f) out of range(%f)!\n",chargeRate,(float)RATEOFCHARGE);
+    printf("Charge Rate(%f) out of range(%f)!\n",chargeRate,RATEOFCHARGE);
     return 0;
   }
   return 1;
