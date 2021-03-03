@@ -16,4 +16,10 @@ int main()
   assert(!batteryHealth(190, 85, 0,PUBLIC));
   assert(!batteryHealth(140, 85, 0,EV));
   
+  /* to check function response */
+  batteryHealth(45, 85, 0,GENERAL);
+  batteryHealth(100, 85, 0,HOME);
+  batteryHealth(210, 85, 0,PUBLIC);
+  batteryHealth(150, 85, 0,EV);
+  
 }
