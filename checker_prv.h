@@ -11,6 +11,9 @@
 #define TEMP_PUBLIC_MAX 210
 #define TEMP_EV_MAX 150
 #define MAXNUMBEROFSECTORS 4
+#define SOC_MIN 20
+#define SOC_MAX 80
+#define RATEOFCHARGE (float)0.8
 
 /* Enums */
 enum MajorSector {GENERAL, HOME, PUBLIC, EV};
