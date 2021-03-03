@@ -16,7 +16,7 @@ int temperatureStatus(float temperature, float cmprTemperature)
 	if((temperature>(float)TEMP_MIN) && (temperature > cmprTemperature))
 	{
 		retStatus = 0;
-                printf("Selected temperature has breached the expected range!\n");
+                printf("temperature %f has breached the expected range(%d - %d)celcius!\n",temperature,TEMP_MIN,cmprTemperature);
 	}
 	return retStatus;
 }
