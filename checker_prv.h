@@ -10,6 +10,7 @@
 #define TEMP_HOME_MAX 80
 #define TEMP_PUBLIC_MAX 210
 #define TEMP_EV_MAX 150
+#define MAXNUMBEROFSECTORS 4
 
 /* Enums */
 enum MajorSector {GENERAL, HOME, PUBLIC, EV};
