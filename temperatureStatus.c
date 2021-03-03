@@ -1,5 +1,14 @@
 #include "checker_prv.h"
-
+/*
+ **********************************************************************************************************************
+ * Service name         : temperatureStatus
+ * Syntax               : int temperatureStatus(float temperature, float cmprTemperature) 
+ * param[in]            : cmprTemperature
+ * param[in]            : sectorType
+ * return               : 0 - out of range, 1 - in range
+ * Description          : Program to check if requested temperature is out of range
+ **********************************************************************************************************************
+ */
 int temperatureStatus(float temperature, float cmprTemperature) 
 {
 	int retStatus = 1;
@@ -7,7 +16,7 @@ int temperatureStatus(float temperature, float cmprTemperature)
 	if((temperature>(float)TEMP_MIN) && (temperature > cmprTemperature))
 	{
 		retStatus = 0;
-                printf("Selected temperature has breached the max range!\n");
+                printf("Selected temperature has breached the expected range!\n");
 	}
 	return retStatus;
 }
