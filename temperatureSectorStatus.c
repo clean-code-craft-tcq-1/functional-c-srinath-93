@@ -1,29 +1,19 @@
 #include "checker_prv.h"
 
+int temperatureMax[]={TEMP_GENRAL_MAX, TEMP_HOME_MAX, TEMP_PUBLIC_MAX, TEMP_EV_MAX};
 int temperatureSectorStatus(float temperature,enum MajorSector sectorType) 
 {
 	int retStatus = 1;
 	/* choose respective sector */
-	switch(sectorType)
+	if(sectorType<((int)MAXNUMBEROFSECTORS))
 	{
-		case GENERAL:
-		retStatus = temperatureStatus(temperature, (float)TEMP_GENRAL_MAX);
-		break;
-		case HOME:
-		retStatus = temperatureStatus(temperature, (float)TEMP_HOME_MAX);
-		break;
-		case PUBLIC:
-		retStatus = temperatureStatus(temperature, (float)TEMP_PUBLIC_MAX);
-		break;	
-		case EV:
-		retStatus = temperatureStatus(temperature, (float)TEMP_EV_MAX);
-		break;
-                default:
-                {
-		printf("Please choose a proper sector!\n");
+		retStatus = temperatureStatus(temperature, (float)temperatureMax[sectorType]);
+	}
+	else
+	{
+		printf("requested sector is invalid\n\n");
 		retStatus = 0;
-	        }
-	        break;
-	}/* End of switch */
+	}
+	/* Return the sector and temperature status */
 	return retStatus;
 }
