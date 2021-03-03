@@ -17,10 +17,10 @@ int main()
   assert(!batteryHealth(140, 85, 0,EV));
   
   /* to check function response */
-  batteryHealth(25, 85, 0,GENERAL);     /* Temperature in range */
-  batteryHealth(55, 70, 0,HOME);        /* soc out of range */
-  batteryHealth(55, 85, 0.9,PUBLIC);    /* charge rate not in range */
-  batteryHealth(45, 85, 0,EV);          /* everything in range */
-  batteryHealth(45, 85, 0,(int)5);      /* Sector out of range */
+  batteryHealth(25, 70, 0,GENERAL);     /* Temperature in range */
+  batteryHealth(55, 85, 0,HOME);        /* soc out of range */
+  batteryHealth(55, 70, 0.9,PUBLIC);    /* charge rate not in range */
+  batteryHealth(45, 70, 0,EV);          /* everything in range */
+  batteryHealth(45, 70, 0,(int)5);      /* Sector out of range */
   
 }
