@@ -24,5 +24,6 @@ int batteryHealth(float temperature, float soc, float chargeRate, enum MajorSect
 int temperatureSectorStatus(float temperature,enum MajorSector sectorType);
 int temperatureStatus(float temperature, float cmprTemperature) ;
 int statusOfCharge(float stateofcharge);
+int rateOfCharge(float chargeRate);
 
 #endif /* CHECKER_PRV_H_ */
