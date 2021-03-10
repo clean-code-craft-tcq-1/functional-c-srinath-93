@@ -21,6 +21,6 @@ int rateOfCharge(float chargeRate)
   rocRange.minTolerance = RATEOFCHARGE;
   rocRange.maxTolerance = 2.0;
   rocRange.paramType = ROC;
-  checkTolerance(chargeRate,rocRange);
+  checkTolerance(chargeRate,rocRange,0);
   return retStatus;
 }
