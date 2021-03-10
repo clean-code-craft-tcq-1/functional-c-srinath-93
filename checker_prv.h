@@ -18,7 +18,8 @@
 #define MAX 1
 #define MAX_WARNING_TEXT_CHARS 40
 #define CALCTOLERANCE(x) (float)(x*(0.05))
-
+#define CEL 0 /* celcius */
+#define FAHR 1 /* Fahrenheit */
 /* Enums */
 enum MajorSector {GENERAL, HOME, PUBLIC, EV};
 typedef enum {TEMPERATURE, SOC, ROC}BmsParam;
@@ -33,8 +34,8 @@ typedef struct
 }toleranceRange_st;
 
 /* Declaration */
-int batteryHealth(float temperature, float soc, float chargeRate, enum MajorSector sector);
-int temperatureSectorStatus(float temperature,enum MajorSector sectorType);
+int batteryHealth(float temperature, float soc, float chargeRate, enum MajorSector sector, int temperatureUnit);
+int temperatureSectorStatus(float temperature,enum MajorSector sectorType, int temperatureUnit);
 int temperatureStatus(float temperature, float cmprTemperature) ;
 int statusOfCharge(float stateofcharge);
 int rateOfCharge(float chargeRate);
