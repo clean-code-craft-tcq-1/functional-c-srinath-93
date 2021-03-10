@@ -11,12 +11,12 @@ void checkTolerance(float dataInput,toleranceRange_st range)
   if(dataInput <= tempMin)
   {
 	  range.dataMinMax = MIN;
-	  warningsGenerator(float min, range.paramType);
+	  warningsGenerator(dataInput, range);
   }
   if(dataInput >= tempMax)
   {
 	  range.dataMinMax = MAX;
-	  warningsGenerator(float max, range.paramType);
+	  warningsGenerator(dataInput, range);
   }
 }
 
