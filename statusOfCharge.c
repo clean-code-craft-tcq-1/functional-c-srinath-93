@@ -21,6 +21,6 @@ int statusOfCharge(float stateofcharge)
  socRange.minTolerance = SOC_MIN;
  socRange.maxTolerance = SOC_MAX;
  socRange.paramType = SOC;
- checkTolerance(stateofcharge,socRange);
+ checkTolerance(stateofcharge,socRange,0);
  return retStatus;
 }
