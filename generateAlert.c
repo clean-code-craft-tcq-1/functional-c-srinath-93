@@ -5,6 +5,7 @@ const char* MaxToleranceNames[] = {"High_Temperature_Charging_Paused", "Approach
 
 void checkTolerance(float dataInput,toleranceRange_st range,int tempUnit)
 {
+  float convTemp = 0.0;
   float tempMin = range.minTolerance;
   float tempMax = range.maxTolerance;
   tempMin += CALCTOLERANCE(range.minTolerance);
