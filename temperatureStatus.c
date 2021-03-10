@@ -13,7 +13,6 @@
 int temperatureStatus(float temperature, float cmprTemperature, int tempUnit) 
 {
 	int retStatus = 1;
-	float convTemp = 0.0;
 	toleranceRange_st tempRange;
 	/* Check if the temperature is out of range */
 	if((temperature>(float)TEMP_MIN) && (temperature > cmprTemperature))
