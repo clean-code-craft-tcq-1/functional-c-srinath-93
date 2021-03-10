@@ -14,10 +14,21 @@
 #define SOC_MIN (float)20
 #define SOC_MAX (float)80
 #define RATEOFCHARGE (float)0.8
+#define MIN 0
+#define MAX 1
+#define MAX_WARNING_TEXT_CHARS 40
 
 /* Enums */
 enum MajorSector {GENERAL, HOME, PUBLIC, EV};
+typedef enum {TEMPERATURE, SOC, ROC}BmsParam;
 
+/* Structure */
+typedef struct
+{
+	float minTolerance;
+	float maxTolerance;
+	BmsParam paramType;
+}toleranceRange_st;
 
 /* Declaration */
 int batteryHealth(float temperature, float soc, float chargeRate, enum MajorSector sector);
@@ -25,5 +36,8 @@ int temperatureSectorStatus(float temperature,enum MajorSector sectorType);
 int temperatureStatus(float temperature, float cmprTemperature) ;
 int statusOfCharge(float stateofcharge);
 int rateOfCharge(float chargeRate);
+void checkTolerance(float min, float max,toleranceRange_st range);
+void warningsGenerator(float breachedValue, BmsParam typeIndex);
+void ParamToString(char* buffer);
 
 #endif /* CHECKER_PRV_H_ */
