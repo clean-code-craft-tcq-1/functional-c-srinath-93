@@ -24,11 +24,6 @@ int temperatureStatus(float temperature, float cmprTemperature, int tempUnit)
 	tempRange.minTolerance = (float)TEMP_MIN;
 	tempRange.maxTolerance = cmprTemperature;
 	tempRange.paramType = TEMPERATURE;
-	checkTolerance(temperature,tempRange);
-	if(tempUnit == FAHR)
-	{
-		convTemp = CELTOFAHR(temperature);
-		printf("Requested temperature in Fahrenhiet %f \n",convTemp);
-	}
+	checkTolerance(temperature,tempRange,tempUnit);
 	return retStatus;
 }
