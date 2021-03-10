@@ -5,9 +5,10 @@ const char* MaxToleranceNames[] = {"High_Temperature_Charging_Paused", "Approach
 
 void checkTolerance(float dataInput,toleranceRange_st range)
 {
-  float tempMin, tempMax;
-  tempMin += (float)CALCTOLERANCE(range.minTolerance);
-  tempMax -= (float)CALCTOLERANCE(range.maxTolerance);
+  float tempMin = range.minTolerance;
+  float tempMax = range.maxTolerance;
+  tempMin += CALCTOLERANCE(range.minTolerance);
+  tempMax -= CALCTOLERANCE(range.maxTolerance);
   if(dataInput <= tempMin)
   {
 	  range.dataMinMax = MIN;
@@ -43,7 +44,6 @@ void ParamToString(char* buffer, toleranceRange_st inputDetails)
         MaxToleranceNames[inputDetails.paramType]);
       }
       break;
-    default:/* do nothing */
-      break;
+    default:/* do nothing */ break;
   }
 }
