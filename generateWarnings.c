@@ -22,7 +22,7 @@ void checkTolerance(float dataInput,toleranceRange_st range,int tempUnit)
   }
   if(tempUnit == FAHR)
   {
-	  convTemp = CELTOFAHR(temperature);
+	  convTemp = CELTOFAHR(dataInput);
 	  printf("Requested temperature in Fahrenhiet %f \n",convTemp);
   }
 }
