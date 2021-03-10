@@ -5,12 +5,12 @@
  * Syntax               : int temperatureStatus(float temperature, float cmprTemperature, int temperatureUnit) 
  * param[in]            : cmprTemperature
  * param[in]            : sectorType
- * param[in]            : temperatureUnit
+ * param[in]            : tempUnit
  * return               : 0 - out of range, 1 - in range
  * Description          : Program to check if requested temperature is out of range
  **********************************************************************************************************************
  */
-int temperatureStatus(float temperature, float cmprTemperature, int temperatureUnit) 
+int temperatureStatus(float temperature, float cmprTemperature, int tempUnit) 
 {
 	int retStatus = 1;
 	float convTemp = 0.0;
@@ -25,7 +25,7 @@ int temperatureStatus(float temperature, float cmprTemperature, int temperatureU
 	tempRange.maxTolerance = cmprTemperature;
 	tempRange.paramType = TEMPERATURE;
 	checkTolerance(temperature,tempRange);
-	if(temperatureUnit == FAHR)
+	if(tempUnit == FAHR)
 	{
 		convTemp = CELTOFAHR(temperature);
 		printf("Requested temperature in Fahrenhiet %f \n",convTemp);
