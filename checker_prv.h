@@ -36,7 +36,7 @@ int temperatureSectorStatus(float temperature,enum MajorSector sectorType);
 int temperatureStatus(float temperature, float cmprTemperature) ;
 int statusOfCharge(float stateofcharge);
 int rateOfCharge(float chargeRate);
-void checkTolerance(float min, float max,toleranceRange_st range);
+void checkTolerance(float dataInput,toleranceRange_st range);
 void warningsGenerator(float breachedValue, BmsParam typeIndex);
 void ParamToString(char* buffer);
 
