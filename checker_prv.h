@@ -42,5 +42,4 @@ int rateOfCharge(float chargeRate);
 void checkTolerance(float dataInput,toleranceRange_st range);
 void warningsGenerator(float breachedValue, toleranceRange_st warnType);
 void ParamToString(char* buffer, toleranceRange_st inputDetails);
-
 #endif /* CHECKER_PRV_H_ */
