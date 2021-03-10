@@ -37,7 +37,7 @@ typedef struct
 /* Declaration */
 int batteryHealth(float temperature, float soc, float chargeRate, enum MajorSector sector, int temperatureUnit);
 int temperatureSectorStatus(float temperature,enum MajorSector sectorType, int temperatureUnit);
-int temperatureStatus(float temperature, float cmprTemperature) ;
+int temperatureStatus(float temperature, float cmprTemperature, int tempUnit) ;
 int statusOfCharge(float stateofcharge);
 int rateOfCharge(float chargeRate);
 void checkTolerance(float dataInput,toleranceRange_st range);
