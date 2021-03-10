@@ -12,11 +12,16 @@
 int temperatureStatus(float temperature, float cmprTemperature) 
 {
 	int retStatus = 1;
+	toleranceRange_st tempRange;
 	/* Check if the temperature is out of range */
 	if((temperature>(float)TEMP_MIN) && (temperature > cmprTemperature))
 	{
 		retStatus = 0;
                 printf("temperature %f has breached the expected range(%d - %f)celcius!\n",temperature,TEMP_MIN,cmprTemperature);
 	}
+	tempRange.minTolerance = (float)TEMP_MIN;
+	tempRange.maxTolerance = cmprTemperature;
+	tempRange.paramType = TEMPERATURE;
+	checkTolerance(temperature,tempRange);
 	return retStatus;
 }
