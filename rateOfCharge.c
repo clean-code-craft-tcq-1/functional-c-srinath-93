@@ -11,10 +11,16 @@
  */
 int rateOfCharge(float chargeRate)
 {
+  int retStatus = 1;
+  toleranceRange_st rocRange;
   if(chargeRate > RATEOFCHARGE)
   {
     printf("Charge Rate(%f) is more than the expected range (%f)!\n",chargeRate,RATEOFCHARGE);
-    return 0;
+    retStatus = 0;
   }
-  return 1;
+  rocRange.minTolerance = RATEOFCHARGE;
+  rocRange.maxTolerance = 2.0;
+  rocRange.paramType = ROC;
+  checkTolerance(chargeRate,rocRange);
+  return retStatus;
 }
