@@ -40,7 +40,7 @@ int temperatureSectorStatus(float temperature,enum MajorSector sectorType, int t
 int temperatureStatus(float temperature, float cmprTemperature, int tempUnit) ;
 int statusOfCharge(float stateofcharge);
 int rateOfCharge(float chargeRate);
-void checkTolerance(float dataInput,toleranceRange_st range);
+void checkTolerance(float dataInput,toleranceRange_st range int tempUnit);
 void warningsGenerator(float breachedValue, toleranceRange_st warnType);
 void ParamToString(char* buffer, toleranceRange_st inputDetails);
 #endif /* CHECKER_PRV_H_ */
