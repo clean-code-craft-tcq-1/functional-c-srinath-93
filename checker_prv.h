@@ -17,6 +17,7 @@
 #define MIN 0
 #define MAX 1
 #define MAX_WARNING_TEXT_CHARS 40
+#define CALCTOLERANCE(x) (float)(x*(0.05))
 
 /* Enums */
 enum MajorSector {GENERAL, HOME, PUBLIC, EV};
