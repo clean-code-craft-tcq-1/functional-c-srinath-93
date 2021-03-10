@@ -6,24 +6,24 @@ const char* MaxToleranceNames[] = {"High_Temperature_Charging_Paused", "Approach
 void checkTolerance(float dataInput,toleranceRange_st range)
 {
   float tempMin, tempMax;
-  tempMin += CALCTOLERANCE(range.minTolerance);
-	tempMax -= CALCTOLERANCE(range.maxTolerance);
-	if(min <= tempMin)
+  tempMin += (float)CALCTOLERANCE(range.minTolerance);
+  tempMax -= (float)CALCTOLERANCE(range.maxTolerance);
+  if(dataInput <= tempMin)
   {
-    range.dataMinMax = MIN;
+	  range.dataMinMax = MIN;
 	  warningsGenerator(float min, range.paramType);
   }
-	if(max >= tempMax)
+  if(dataInput >= tempMax)
   {
-    range.dataMinMax = MAX;
+	  range.dataMinMax = MAX;
 	  warningsGenerator(float max, range.paramType);
   }
 }
 
 void warningsGenerator(float breachedValue, toleranceRange_st warnType)
 {
- char warnMessage[MAX_WARNING_TEXT_CHARS]; 
-  ParamToString(warnMessage,warnType);
+	char warnMessage[MAX_WARNING_TEXT_CHARS];
+	ParamToString(warnMessage,warnType);
 	printf(" Breached value - %f \t %s \n",breachedValue, warnMessage);
 }
 
