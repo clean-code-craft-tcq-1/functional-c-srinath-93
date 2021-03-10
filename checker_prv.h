@@ -28,6 +28,7 @@ typedef struct
 	float minTolerance;
 	float maxTolerance;
 	BmsParam paramType;
+	int dataMinMax;
 }toleranceRange_st;
 
 /* Declaration */
