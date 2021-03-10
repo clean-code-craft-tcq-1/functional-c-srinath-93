@@ -11,10 +11,16 @@
  */
 int statusOfCharge(float stateofcharge)
 {
+  int retStatus = 1;
+  toleranceRange_st socRange;
   if(stateofcharge < SOC_MIN || stateofcharge > SOC_MAX)
   {
     printf("State of Charge(%f) is not with the expected range(%f - %f)!\n\n",stateofcharge,SOC_MIN,SOC_MAX);
-    return 0;
+    retStatus = 0;
   }
+  socRange.minTolerance = (float)TEMP_MIN;
+	socRange.maxTolerance = cmprTemperature;
+	socRange.paramType = TEMPERATURE;
+	checkTolerance(stateofcharge,socRange);
   return 1;
 }
