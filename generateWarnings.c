@@ -5,7 +5,6 @@ const char* MaxToleranceNames[] = {"High_Temperature_Charging_Paused", "Approach
 
 void checkTolerance(float dataInput,toleranceRange_st range,int tempUnit)
 {
-  float convTemp = 0.0;
   float tempMin = range.minTolerance;
   float tempMax = range.maxTolerance;
   tempMin += CALCTOLERANCE(range.minTolerance);
@@ -13,17 +12,12 @@ void checkTolerance(float dataInput,toleranceRange_st range,int tempUnit)
   if(dataInput <= tempMin)
   {
 	  range.dataMinMax = MIN;
-	  warningsGenerator(dataInput, range);
+	  warningsGenerator(dataInput, range,tempUnit);
   }
   if(dataInput >= tempMax)
   {
 	  range.dataMinMax = MAX;
-	  warningsGenerator(dataInput, range);
-  }
-  if(tempUnit == FAHR)
-  {
-	  convTemp = CELTOFAHR(dataInput);
-	  printf("Requested temperature in Fahrenhiet %f \n",convTemp);
+	  warningsGenerator(dataInput, range,tempUnit);
   }
 }
 
