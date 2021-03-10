@@ -2,14 +2,15 @@
 /*
  **********************************************************************************************************************
  * Service name         : temperatureStatus
- * Syntax               : int temperatureStatus(float temperature, float cmprTemperature) 
+ * Syntax               : int temperatureStatus(float temperature, float cmprTemperature, int temperatureUnit) 
  * param[in]            : cmprTemperature
  * param[in]            : sectorType
+ * param[in]            : temperatureUnit
  * return               : 0 - out of range, 1 - in range
  * Description          : Program to check if requested temperature is out of range
  **********************************************************************************************************************
  */
-int temperatureStatus(float temperature, float cmprTemperature) 
+int temperatureStatus(float temperature, float cmprTemperature, int temperatureUnit) 
 {
 	int retStatus = 1;
 	toleranceRange_st tempRange;
@@ -23,5 +24,9 @@ int temperatureStatus(float temperature, float cmprTemperature)
 	tempRange.maxTolerance = cmprTemperature;
 	tempRange.paramType = TEMPERATURE;
 	checkTolerance(temperature,tempRange);
+	if(temperatureUnit == FAHR)
+	{
+		CELTOFAHR(temperature);
+	}
 	return retStatus;
 }
