@@ -20,7 +20,7 @@
 #define CALCTOLERANCE(x) (float)(x*(0.05))
 #define CEL 0 /* celcius */
 #define FAHR 1 /* Fahrenheit */
-#define CELTOFAHR(x) (float)((x*(9/5))+32)
+#define CELTOFAHR(Y) (float)((Y*(9/5))+32)
 /* Enums */
 enum MajorSector {GENERAL, HOME, PUBLIC, EV};
 typedef enum {TEMPERATURE, SOC, ROC}BmsParam;
