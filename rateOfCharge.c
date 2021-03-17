@@ -1,5 +1,7 @@
 #include "checker_prv.h"
+#include "accumalate_Report_Prv.h"
 
+extern accumalateRange_st dataRange;
 /*
  **********************************************************************************************************************
  * Service name         : rateOfCharge
@@ -21,6 +23,9 @@ int rateOfCharge(float chargeRate)
     rocRange.maxTolerance = 2.0;
     rocRange.paramType = ROC;
     checkTolerance(chargeRate,rocRange,0);
+    dataRange.rocInputParam = chargeRate;
+    dataRange.rocMinBreach = rocRange.minTolerance;
+    dataRange.rocMaxBreach = rocRange.maxTolerance;
   }
   return retStatus;
 }
