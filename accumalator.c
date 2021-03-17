@@ -15,33 +15,6 @@ accumalateRange_st dataRange;
 
 void dataAccumalator(float dataInput,toleranceRange_st range)
 {
-  switch(range.paramType)
-  {
-    case TEMPERATURE:
-      {
-        dataRange.tempInputParam = dataInput;
-        dataRange.tempMinBreach = range.minTolerance;
-        dataRange.tempMaxBreach = range.maxTolerance;
-      }
-      break;
-    case SOC:
-      {
-        dataRange.socInputParam = dataInput; 
-        dataRange.socMinBreach = range.minTolerance;
-        dataRange.socMaxBreach = range.maxTolerance;
-      }
-      break;
-    case ROC:
-      {
-        dataRange.rocInputParam = dataInput;
-        dataRange.rocMinBreach = range.minTolerance;
-        dataRange.rocMaxBreach = range.maxTolerance;
-      }
-      break;
-    default:
-      {
-        /* Do nothing */
-      }
-      break;
-  }
+  (void)dataInput;
+  (void)range;
 }
