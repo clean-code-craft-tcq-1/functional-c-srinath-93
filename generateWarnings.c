@@ -14,13 +14,11 @@ toleranceRange_st checkTolerance(toleranceRange_st range)
   {
 	  range.dataMinMax = MIN;
 	  dataRange.breachMinType = range.dataMinMax;
-	  warningsGenerator(range);
   }
   if(range.inputParam >= range.maxTolerance)
   {
 	  range.dataMinMax = MAX;
 	  dataRange.breachMaxType = range.dataMinMax;
-	  warningsGenerator(range);
   }
   return range;
 }
