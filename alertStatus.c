@@ -1,10 +1,10 @@
 #include "checker_prv.h"
 
-void warningsGenerator(toleranceRange_st warnType, int tempUnit)
+void warningsGenerator(toleranceRange_st warnType)
 {
   float convTemp = 0.0;
   char warnMessage[MAX_WARNING_TEXT_CHARS];
-  if(tempUnit == FAHR)
+  if(warnType.tempUnitConv == FAHR)
   {
 	  convTemp = CELTOFAHR(warnType.inputParam);
 	  printf("Requested temperature in Fahrenhiet %f \n",convTemp);
