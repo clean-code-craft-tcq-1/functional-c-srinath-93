@@ -1,5 +1,7 @@
 #include "checker_prv.h"
+#include "accumalate_Report_Prv.h"
 
+extern accumalateRange_st dataRange;
 /*
  **********************************************************************************************************************
  * Service name         : statusOfCharge
@@ -21,6 +23,9 @@ int statusOfCharge(float stateofcharge)
     socRange.maxTolerance = SOC_MAX;
     socRange.paramType = SOC;
     checkTolerance(stateofcharge,socRange,0);
+    dataRange.socInputParam = dataInput;
+    dataRange.socMinBreach = socRange.minTolerance;
+    dataRange.socMaxBreach = socRange.maxTolerance;
   }
  return retStatus;
 }
