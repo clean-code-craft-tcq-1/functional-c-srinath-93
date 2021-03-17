@@ -24,7 +24,6 @@
 /* Enums */
 enum MajorSector {GENERAL, HOME, PUBLIC, EV};
 typedef enum {TEMPERATURE, SOC, ROC}BmsParam;
-
 /* Structure */
 typedef struct
 {
@@ -33,7 +32,6 @@ typedef struct
 	BmsParam paramType;
 	int dataMinMax;
 }toleranceRange_st;
-
 /* Declaration */
 int batteryHealth(float temperature, float soc, float chargeRate, enum MajorSector sector, int temperatureUnit);
 int temperatureSectorStatus(float temperature,enum MajorSector sectorType, int temperatureUnit);
@@ -43,4 +41,5 @@ int rateOfCharge(float chargeRate);
 void checkTolerance(float dataInput,toleranceRange_st range,int tempUnit);
 void warningsGenerator(float breachedValue, toleranceRange_st warnType,int tempUnit);
 void ParamToString(char* buffer, toleranceRange_st inputDetails);
+void DataAccumalator(toleranceRange_st range);
 #endif /* CHECKER_PRV_H_ */
