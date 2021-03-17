@@ -41,7 +41,7 @@ int temperatureStatus(float temperature, float cmprTemperature, int tempUnit) ;
 int statusOfCharge(float stateofcharge);
 int rateOfCharge(float chargeRate);
 toleranceRange_st checkTolerance(toleranceRange_st range);
-void warningsGenerator(toleranceRange_st warnType,int tempUnit);
+void warningsGenerator(toleranceRange_st warnType);
 void ParamToString(char* buffer, toleranceRange_st inputDetails);
 void dataAccumalator(toleranceRange_st range);
 #endif /* CHECKER_PRV_H_ */
