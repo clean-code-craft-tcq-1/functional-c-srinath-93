@@ -22,10 +22,11 @@ int statusOfCharge(float stateofcharge)
     socRange.minTolerance = SOC_MIN;
     socRange.maxTolerance = SOC_MAX;
     socRange.paramType = SOC;
-    checkTolerance(stateofcharge,socRange,0);
+    socRange = checkTolerance(stateofcharge,socRange,0);
     dataRange.socInputParam = stateofcharge;
     dataRange.socMinBreach = socRange.minTolerance;
     dataRange.socMaxBreach = socRange.maxTolerance;
+    dataAccumalator(socRange);
   }
  return retStatus;
 }
