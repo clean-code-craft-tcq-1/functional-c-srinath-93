@@ -1,7 +1,7 @@
 #include "checker_prv.h"
 
-const char* MinToleranceNames[] = {"Low_Temperature", "Approaching_discharge", " "};
-const char* MaxToleranceNames[] = {"High_Temperature_Charging_Paused", "Approaching_charge_peak", " "};
+const char* MinToleranceNames[] = {"Low_Temperature", "Approaching_discharge", "LOW_ROC"};
+const char* MaxToleranceNames[] = {"High_Temperature_Charging_Paused", "Approaching_charge_peak", "HIGH_ROC"};
 
 void checkTolerance(float dataInput,toleranceRange_st range,int tempUnit)
 {
