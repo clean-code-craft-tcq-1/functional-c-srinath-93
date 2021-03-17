@@ -25,8 +25,9 @@ int temperatureStatus(float temperature, float cmprTemperature, int tempUnit)
 		tempRange.minTolerance = (float)TEMP_MIN;
 		tempRange.maxTolerance = cmprTemperature;
 		tempRange.paramType = TEMPERATURE;
-		tempRange = checkTolerance(temperature,tempRange,tempUnit);
-		dataRange.tempInputParam = temperature;
+		tempRange.inputParam = temperature;
+		tempRange = checkTolerance(tempRange,tempUnit);
+		dataRange.tempInputParam = tempRange.inputParam;
 		dataRange.tempMinBreach = tempRange.minTolerance;
 		dataRange.tempMaxBreach = tempRange.maxTolerance;
 		dataAccumalator(tempRange);
