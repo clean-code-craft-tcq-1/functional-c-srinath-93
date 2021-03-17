@@ -32,7 +32,7 @@ typedef struct
 	float maxTolerance;
 	BmsParam paramType;
 	int dataMinMax;
-	int tempUnit;
+	int tempUnitConv;
 }toleranceRange_st;
 /* Declaration */
 int batteryHealth(float temperature, float soc, float chargeRate, enum MajorSector sector, int temperatureUnit);
