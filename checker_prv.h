@@ -39,7 +39,7 @@ int temperatureSectorStatus(float temperature,enum MajorSector sectorType, int t
 int temperatureStatus(float temperature, float cmprTemperature, int tempUnit) ;
 int statusOfCharge(float stateofcharge);
 int rateOfCharge(float chargeRate);
-toleranceRange_st checkTolerance(float dataInput,toleranceRange_st range,int tempUnit);
+toleranceRange_st checkTolerance(toleranceRange_st range,int tempUnit);
 void warningsGenerator(toleranceRange_st warnType,int tempUnit);
 void ParamToString(char* buffer, toleranceRange_st inputDetails);
 void dataAccumalator(toleranceRange_st range);
