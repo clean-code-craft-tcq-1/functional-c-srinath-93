@@ -22,7 +22,6 @@ toleranceRange_st checkTolerance(float dataInput,toleranceRange_st range,int tem
 	  dataRange.breachMaxType = range.dataMinMax;
 	  warningsGenerator(dataInput, range,tempUnit);
   }
-  dataAccumalator(dataInput,range);
   return range;
 }
 
