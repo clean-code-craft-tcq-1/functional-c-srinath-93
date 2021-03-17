@@ -27,6 +27,7 @@ typedef enum {TEMPERATURE, SOC, ROC}BmsParam;
 /* Structure */
 typedef struct
 {
+	float inputParam;
 	float minTolerance;
 	float maxTolerance;
 	BmsParam paramType;
@@ -39,7 +40,7 @@ int temperatureStatus(float temperature, float cmprTemperature, int tempUnit) ;
 int statusOfCharge(float stateofcharge);
 int rateOfCharge(float chargeRate);
 toleranceRange_st checkTolerance(float dataInput,toleranceRange_st range,int tempUnit);
-void warningsGenerator(float breachedValue, toleranceRange_st warnType,int tempUnit);
+void warningsGenerator(toleranceRange_st warnType,int tempUnit);
 void ParamToString(char* buffer, toleranceRange_st inputDetails);
 void dataAccumalator(toleranceRange_st range);
 #endif /* CHECKER_PRV_H_ */
