@@ -1,4 +1,7 @@
 #include "checker_prv.h"
+#include "accumalate_Report_Prv.h"
+
+extern accumalateRange_st dataRange;
 /*
  **********************************************************************************************************************
  * Service name         : temperatureStatus
