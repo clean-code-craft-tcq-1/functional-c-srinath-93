@@ -22,8 +22,9 @@ int rateOfCharge(float chargeRate)
     rocRange.minTolerance = RATEOFCHARGE + (float)0.1;
     rocRange.maxTolerance = 2.0;
     rocRange.paramType = ROC;
-    rocRange = checkTolerance(chargeRate,rocRange,0);
-    dataRange.rocInputParam = chargeRate;
+    rocRange.inputParam = chargeRate;
+    rocRange = checkTolerance(rocRange,0);
+    dataRange.rocInputParam = rocRange.inputParam;
     dataRange.rocMinBreach = rocRange.minTolerance;
     dataRange.rocMaxBreach = rocRange.maxTolerance;
     dataAccumalator(rocRange);
