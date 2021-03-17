@@ -5,16 +5,14 @@ accumalateRange_st dataRange;
 /*
  **********************************************************************************************************************
  * Service name         : dataAccumalator
- * Syntax               : void dataAccumalator(float dataInput,toleranceRange_st range)
- * param[in]            : dataInput
+ * Syntax               : void dataAccumalator(toleranceRange_st range)
  * param[in]            : range
  * return               : None
  * Description          : Program to check and accumalte the required BMS data 
  **********************************************************************************************************************
  */
 
-void dataAccumalator(float dataInput,toleranceRange_st range)
+void dataAccumalator(toleranceRange_st range)
 {
-  (void)dataInput;
   (void)range;
 }
