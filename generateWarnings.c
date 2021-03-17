@@ -4,23 +4,23 @@
 const char* MinToleranceNames[] = {"Low_Temperature", "Approaching_discharge", "LOW_ROC"};
 const char* MaxToleranceNames[] = {"High_Temperature_Charging_Paused", "Approaching_charge_peak", "HIGH_ROC"};
 extern accumalateRange_st dataRange;
-toleranceRange_st checkTolerance(float dataInput,toleranceRange_st range,int tempUnit)
+toleranceRange_st checkTolerance(toleranceRange_st range,int tempUnit)
 {
   float rangeMin = range.minTolerance;
   float rangeMax = range.maxTolerance;
   range.minTolerance += CALCTOLERANCE(range.minTolerance);
   range.maxTolerance -= CALCTOLERANCE(range.maxTolerance);
-  if(dataInput <= range.minTolerance)
+  if(range.inputParam <= range.minTolerance)
   {
 	  range.dataMinMax = MIN;
 	  dataRange.breachMinType = range.dataMinMax;
-	  warningsGenerator(dataInput, range,tempUnit);
+	  warningsGenerator(range,tempUnit);
   }
-  if(dataInput >= range.maxTolerance)
+  if(range.inputParam >= range.maxTolerance)
   {
 	  range.dataMinMax = MAX;
 	  dataRange.breachMaxType = range.dataMinMax;
-	  warningsGenerator(dataInput, range,tempUnit);
+	  warningsGenerator(range,tempUnit);
   }
   return range;
 }
