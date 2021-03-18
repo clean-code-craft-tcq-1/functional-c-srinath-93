@@ -6,11 +6,10 @@ int main()
 {
   /* Negative test case - BMS issue detected (Temperature, Soc and Charge rate is not in expected range) */
   assert(batteryHealth(25, 70, 0.7,GENERAL,CEL));
+  assert(controllerAction());
   assert(batteryHealth(80, 70, 0.7,HOME,FAHR));
   assert(batteryHealth(190, 70, 0.7,PUBLIC,CEL));
   assert(batteryHealth(140, 70, 0.7,EV,FAHR));
-  
-  assert(controllerAction());
   
   /* Positive test case - BMS Passed (Temperature, Soc and Charge rate is within expected range) */
   assert(!batteryHealth(25, 85, 0,GENERAL,CEL));
