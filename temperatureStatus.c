@@ -33,5 +33,6 @@ int temperatureStatus(float temperature, float cmprTemperature, int tempUnit)
 		dataRange.tempMaxBreach = tempRange.maxTolerance;
 		dataAccumalator(tempRange);
 	}
+	dataRange.retstatus = retStatus;
 	return retStatus;
 }
