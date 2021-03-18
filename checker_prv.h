@@ -3,7 +3,6 @@
 
 #include <stdio.h>
 #include <assert.h>
-
 /* Macros */
 #define TEMP_MIN 0
 #define TEMP_GENRAL_MAX 45
@@ -45,5 +44,5 @@ toleranceRange_st checkTolerance(toleranceRange_st range);
 void warningsGenerator(toleranceRange_st warnType);
 void ParamToString(char* buffer, toleranceRange_st inputDetails);
 void dataAccumalator(toleranceRange_st range);
-void controllerAction(void);
+unsigned int controllerAction(void);
 #endif /* CHECKER_PRV_H_ */
