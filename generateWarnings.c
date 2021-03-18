@@ -6,8 +6,6 @@ const char* MaxToleranceNames[] = {"High_Temperature_Charging_Paused", "Approach
 extern accumalateRange_st dataRange;
 toleranceRange_st checkTolerance(toleranceRange_st range)
 {
-  float rangeMin = range.minTolerance;
-  float rangeMax = range.maxTolerance;
   range.minTolerance += CALCTOLERANCE(range.minTolerance);
   range.maxTolerance -= CALCTOLERANCE(range.maxTolerance);
   if(range.inputParam <= range.minTolerance)
