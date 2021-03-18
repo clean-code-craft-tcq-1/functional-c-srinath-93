@@ -30,5 +30,6 @@ int rateOfCharge(float chargeRate)
     dataRange.rocMaxBreach = rocRange.maxTolerance;
     dataAccumalator(rocRange);
   }
+  dataRange.retstatus = retStatus;
   return retStatus;
 }
