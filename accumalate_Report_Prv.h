@@ -19,6 +19,7 @@ typedef struct
 	float rocMaxBreach;
 	int breachMinType; /* can be maintained as 1 byte integer in future update */
 	int breachMaxType; /* can be maintained as 1 byte integer in future update */
+	int retstatus;
 }accumalateRange_st;
 
 #endif /* ACCUMALATE_REPORT_PRV_H_ */
