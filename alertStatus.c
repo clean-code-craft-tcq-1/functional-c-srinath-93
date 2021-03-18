@@ -27,5 +27,9 @@ unsigned int controllerAction()
 		accumateReportCnt++; /* increments when some breach has occured */
 		retStatus = 0;
 	}
+	if(accumateReportCnt>2)
+	{
+		accumateReportCnt = 0;
+	}	
 	return retStatus;
 }
