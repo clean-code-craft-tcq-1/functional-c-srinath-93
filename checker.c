@@ -10,6 +10,8 @@ int main()
   assert(batteryHealth(190, 70, 0.7,PUBLIC,CEL));
   assert(batteryHealth(140, 70, 0.7,EV,FAHR));
   
+  assert(controllerAction());
+  
   /* Positive test case - BMS Passed (Temperature, Soc and Charge rate is within expected range) */
   assert(!batteryHealth(25, 85, 0,GENERAL,CEL));
   assert(!batteryHealth(80, 85, 0,HOME,FAHR));
@@ -22,5 +24,4 @@ int main()
   batteryHealth(55, 70, 0.9,PUBLIC,CEL);    /* charge rate not in range */
   batteryHealth(45, 70, 0,EV,FAHR);          /* everything in range */
   batteryHealth(45, 70, 0,(int)5,CEL);      /* Sector out of range */
-  
 }
