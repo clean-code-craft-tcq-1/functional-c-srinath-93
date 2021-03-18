@@ -15,4 +15,5 @@ accumalateRange_st dataRange;
 void dataAccumalator(toleranceRange_st range)
 {
   warningsGenerator(range);
+  controllerAction();
 }
