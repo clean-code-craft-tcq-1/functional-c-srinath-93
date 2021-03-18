@@ -17,7 +17,7 @@ void warningsGenerator(toleranceRange_st warnType)
 
 void controllerAction()
 {
-	accumalateRange_st *cntrlrAction = dataRange;
-	(void)cntrlAction;
+	accumalateRange_st cntrlrAction = dataRange;
+	printf("\n\n\nBreached type - %d \n",cntrlrAction.parameterType);
 	/* cntrlAction can be used for further action like - email alert, new feauture addition, etc */
 }
