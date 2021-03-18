@@ -30,5 +30,6 @@ int statusOfCharge(float stateofcharge)
     dataRange.socMaxBreach = socRange.maxTolerance;
     dataAccumalator(socRange);
   }
+  dataRange.retstatus = retStatus;
  return retStatus;
 }
