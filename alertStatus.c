@@ -1,5 +1,7 @@
 #include "checker_prv.h"
+#include "accumalate_Report_Prv.h"
 
+extern accumalateRange_st dataRange;
 void warningsGenerator(toleranceRange_st warnType)
 {
   float convTemp = 0.0;
@@ -11,4 +13,12 @@ void warningsGenerator(toleranceRange_st warnType)
   }
   ParamToString(warnMessage,warnType);
   printf(" Breached value - %f \t %s \n",warnType.inputParam, warnMessage);
+}
+
+void controllerAction()
+{
+	accumalateRange_st *cntrlrAction;
+	cntrlrAction = &dataRange;
+	(void)cntrlAction;
+	/* cntrlAction can be used for further action like - email alert, new feauture addition, etc */
 }
