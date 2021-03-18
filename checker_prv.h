@@ -21,6 +21,7 @@
 #define CEL 0 /* celcius */
 #define FAHR 1 /* Fahrenheit */
 #define CELTOFAHR(Y) (float)((Y*(9/5))+32)
+extern unsigned int accumateReportCnt;
 /* Enums */
 enum MajorSector {GENERAL, HOME, PUBLIC, EV};
 typedef enum {TEMPERATURE, SOC, ROC}BmsParam;
