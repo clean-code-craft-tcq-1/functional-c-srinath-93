@@ -1,6 +1,7 @@
 #include "checker_prv.h"
 #include "accumalate_Report_Prv.h"
 
+unsigned int accumateReportCnt;
 extern accumalateRange_st dataRange;
 void warningsGenerator(toleranceRange_st warnType)
 {
@@ -20,4 +21,8 @@ void controllerAction()
 	accumalateRange_st cntrlrAction = dataRange;
 	printf("\n\n\nBreached type - %d \n",cntrlrAction.parameterType);
 	/* cntrlAction can be used for further action like - email alert, new feauture addition, etc */
+	if(dataRange.retstatus < 1)
+	{
+		accumateReportCnt++; /* increments when some breach has occured */
+	}
 }
