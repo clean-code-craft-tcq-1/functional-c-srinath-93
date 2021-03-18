@@ -17,8 +17,7 @@ void warningsGenerator(toleranceRange_st warnType)
 
 void controllerAction()
 {
-	accumalateRange_st *cntrlrAction;
-	cntrlrAction = &dataRange;
+	accumalateRange_st *cntrlrAction = dataRange;
 	(void)cntrlAction;
 	/* cntrlAction can be used for further action like - email alert, new feauture addition, etc */
 }
